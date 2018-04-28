@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.notification.MainActivity">
+
+    <Button
+        android:id="@+id/btn_sendchat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送聊天消息"
+        />
+
+    <Button
+        android:id="@+id/btn_send_observer"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sendchat"
+        android:layout_height="wrap_content"
+        android:text="发送订阅消息"
+        />
+</android.support.constraint.ConstraintLayout>

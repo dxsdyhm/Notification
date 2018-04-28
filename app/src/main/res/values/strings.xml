@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Notification</string>
+    <string name="reques_sub">请求一次订阅消息</string>
+</resources>
