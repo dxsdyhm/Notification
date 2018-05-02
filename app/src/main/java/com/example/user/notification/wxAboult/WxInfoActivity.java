@@ -1,12 +1,18 @@
 package com.example.user.notification.wxAboult;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.example.user.notification.R;
 import com.example.user.notification.gloable.MyApp;
+import com.example.user.notification.gloable.Util;
 import com.tencent.mm.opensdk.modelbiz.SubscribeMessage;
+import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.opensdk.modelmsg.WXWebpageObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,5 +45,9 @@ public class WxInfoActivity extends AppCompatActivity {
         req.templateID = "_dxyQ9KpIPEcLKUxuoQWg37HPGK46oMMR9WS7KGdUx4";
         req.reserved ="dxsdyhm";
         MyApp.api.sendReq(req);
+    }
+
+    private String buildTransaction(final String type) {
+        return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
     }
 }

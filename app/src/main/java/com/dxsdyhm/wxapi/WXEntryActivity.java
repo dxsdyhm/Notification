@@ -7,10 +7,12 @@ import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.user.notification.gloable.MyApp;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
+import com.tencent.mm.opensdk.modelbiz.SubscribeMessage;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 
 /**
@@ -56,5 +58,14 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
     @Override
     public void onResp(BaseResp baseResp) {
         Log.e("dxsTest","baseResp:"+baseResp.toString());
+        if(baseResp.errCode==BaseResp.ErrCode.ERR_OK){
+            if(baseResp instanceof SubscribeMessage.Resp){
+                SubscribeMessage.Resp resp= (SubscribeMessage.Resp) baseResp;
+                Log.e("dxsTest",resp.action);
+                Log.e("dxsTest",resp.templateID);
+                Log.e("dxsTest",resp.openId);
+                Toast.makeText(this,"用户行为："+resp.action,Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
