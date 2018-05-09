@@ -20,4 +20,11 @@
         android:layout_height="wrap_content"
         android:text="发送订阅消息"
         />
+    <Button
+        android:id="@+id/btn_wxlogin"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_send_observer"
+        android:layout_height="wrap_content"
+        android:text="微信登陆"
+        />
 </android.support.constraint.ConstraintLayout>

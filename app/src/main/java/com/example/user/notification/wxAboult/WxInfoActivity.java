@@ -46,8 +46,4 @@ public class WxInfoActivity extends AppCompatActivity {
         req.reserved ="dxsdyhm";
         MyApp.api.sendReq(req);
     }
-
-    private String buildTransaction(final String type) {
-        return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
-    }
 }

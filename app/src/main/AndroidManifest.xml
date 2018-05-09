@@ -36,10 +36,12 @@
         <service android:name="com.inuker.bluetooth.library.BluetoothService" />
 
         <activity android:name=".activity.BleControlActivity" />
-        <activity android:name=".wxAboult.WxInfoActivity"/>
-        <activity android:name="com.dxsdyhm.wxapi.WXEntryActivity"
-            android:theme="@android:style/Theme.NoDisplay"
-            android:exported="true"/>
+        <activity android:name=".wxAboult.WxInfoActivity" />
+        <activity
+            android:name="com.dxsdyhm.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <activity android:name=".wxAboult.WxLoginActivity"/>
     </application>
 
 </manifest>

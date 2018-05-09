@@ -13,8 +13,9 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 public class MyApp extends Application {
     private static String APPID_WEIXIN="wx146d06d152af3d07";
+//    private static String APPID_WEIXIN="wxcaf33ba1733ae02f";//xi
     public static IWXAPI api;
-    private static Context context;
+    public static Context context;
     @Override
     public void onCreate() {
         super.onCreate();

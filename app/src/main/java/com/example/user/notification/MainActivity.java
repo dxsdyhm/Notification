@@ -18,6 +18,7 @@ import android.widget.Button;
 import com.example.user.notification.activity.BleListActivity;
 import com.example.user.notification.gloable.MyApp;
 import com.example.user.notification.wxAboult.WxInfoActivity;
+import com.example.user.notification.wxAboult.WxLoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private void initUi() {
         Button btnChat = findViewById(R.id.btn_sendchat);
         Button btnObser = findViewById(R.id.btn_send_observer);
+        Button btnWxLogin = findViewById(R.id.btn_wxlogin);
         btnChat.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.DONUT)
             @Override
@@ -61,11 +63,24 @@ public class MainActivity extends AppCompatActivity {
                 toWxAboult();
             }
         });
+
+        btnWxLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toWxLogin();
+            }
+        });
     }
 
     private void toWxAboult(){
         Intent to=new Intent();
         to.setClass(MainActivity.this,WxInfoActivity.class);
+        startActivity(to);
+    }
+
+    private void toWxLogin(){
+        Intent to=new Intent();
+        to.setClass(MainActivity.this,WxLoginActivity.class);
         startActivity(to);
     }
 

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.user.notification.gloable.MyApp;
+import com.example.user.notification.wxAboult.wxservice.retrofit.HttpSend;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
 import com.tencent.mm.opensdk.modelbiz.SubscribeMessage;
@@ -47,7 +48,6 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
     @Override
     protected void onStart() {
         super.onStart();
-        finish();
     }
 
     @Override
@@ -65,6 +65,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
                 Log.e("dxsTest",resp.templateID);
                 Log.e("dxsTest",resp.openId);
                 Toast.makeText(this,"用户行为："+resp.action,Toast.LENGTH_LONG).show();
+                HttpSend.getInstence().sendMessage(resp.openId,resp.templateID);
             }
         }
     }
