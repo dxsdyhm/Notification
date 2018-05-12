@@ -31,11 +31,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.BleListActivity" />
+        <activity android:name="com.mvp.ui.activity.BleListActivity" />
 
         <service android:name="com.inuker.bluetooth.library.BluetoothService" />
 
-        <activity android:name=".activity.BleControlActivity" />
+        <activity android:name="com.mvp.ui.activity.BleControlActivity" />
         <activity android:name=".wxAboult.WxInfoActivity" />
         <activity
             android:name="com.dxsdyhm.wxapi.WXEntryActivity"

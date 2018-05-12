@@ -15,8 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.user.notification.activity.BleListActivity;
-import com.example.user.notification.gloable.MyApp;
+import com.mvp.ui.activity.BleListActivity;
 import com.example.user.notification.wxAboult.WxInfoActivity;
 import com.example.user.notification.wxAboult.WxLoginActivity;
 

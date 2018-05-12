@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.user.notification.R;
 import com.example.user.notification.entity.Ble;
+import com.example.user.notification.interf.BleItermClick;
 import com.inuker.bluetooth.library.beacon.Beacon;
 
 import me.drakeet.multitype.ItemViewBinder;
@@ -18,6 +19,11 @@ import me.drakeet.multitype.ItemViewBinder;
  */
 
 public class BlebindView extends ItemViewBinder<Ble,BlebindView.ViewHolder> {
+    private BleItermClick listner;
+
+    public BlebindView(BleItermClick listner) {
+        this.listner = listner;
+    }
 
     @NonNull
     @Override
@@ -27,9 +33,17 @@ public class BlebindView extends ItemViewBinder<Ble,BlebindView.ViewHolder> {
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull Ble item) {
+    protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull final Ble item) {
         holder.mac.setText(item.getMac());
         holder.content.setText(item.getBean().toString());
+        holder.content.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(listner!=null){
+                    listner.bleOnClick(item);
+                }
+            }
+        });
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {

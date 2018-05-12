@@ -1,4 +1,4 @@
-package com.example.user.notification.activity;
+package com.mvp.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
