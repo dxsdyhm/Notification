@@ -69,6 +69,13 @@ public class MainActivity extends AppCompatActivity {
                 toWxLogin();
             }
         });
+
+        findViewById(R.id.btn_voice).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                testVoice();
+            }
+        });
     }
 
     private void toWxAboult(){
@@ -116,5 +123,11 @@ public class MainActivity extends AppCompatActivity {
         NotificationManager notificationManager = (NotificationManager) getSystemService(
                 NOTIFICATION_SERVICE);
         notificationManager.createNotificationChannel(channel);
+    }
+
+    private void testVoice(){
+        Intent to=new Intent();
+        to.setClass(MainActivity.this,ScollActivity.class);
+        startActivity(to);
     }
 }

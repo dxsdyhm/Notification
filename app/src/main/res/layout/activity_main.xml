@@ -27,4 +27,11 @@
         android:layout_height="wrap_content"
         android:text="微信登陆"
         />
+    <Button
+        android:id="@+id/btn_voice"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_wxlogin"
+        android:layout_height="wrap_content"
+        android:text="声音测试"
+        />
 </android.support.constraint.ConstraintLayout>
