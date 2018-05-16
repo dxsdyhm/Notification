@@ -96,4 +96,6 @@ dependencies {
     compile 'me.drakeet.multitype:multitype:3.4.2', {
         exclude group: 'com.android.support'
     }
+    //slide layout
+    compile 'com.sothree.slidinguppanel:library:3.4.0'
 }

@@ -42,7 +42,8 @@
             android:exported="true"
             android:theme="@android:style/Theme.NoDisplay" />
         <activity android:name=".wxAboult.WxLoginActivity" />
-        <activity android:name=".ScollActivity"></activity>
+        <activity android:name=".ScollActivity" />
+        <activity android:name=".SlideActivity"></activity>
     </application>
 
 </manifest>

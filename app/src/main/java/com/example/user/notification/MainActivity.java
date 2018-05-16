@@ -76,6 +76,13 @@ public class MainActivity extends AppCompatActivity {
                 testVoice();
             }
         });
+
+        findViewById(R.id.btn_device).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toSlide();
+            }
+        });
     }
 
     private void toWxAboult(){
@@ -87,6 +94,12 @@ public class MainActivity extends AppCompatActivity {
     private void toWxLogin(){
         Intent to=new Intent();
         to.setClass(MainActivity.this,WxLoginActivity.class);
+        startActivity(to);
+    }
+
+    private void toSlide(){
+        Intent to=new Intent();
+        to.setClass(MainActivity.this,SlideActivity.class);
         startActivity(to);
     }
 
