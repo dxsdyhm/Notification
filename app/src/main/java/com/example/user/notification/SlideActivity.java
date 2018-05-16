@@ -44,7 +44,6 @@ public class SlideActivity extends AppCompatActivity implements View.OnClickList
     private SlidingUpPanelLayout mLayout;
 
     private RecyclerView rlTest;
-    private Map<String,Ble> bles=new HashMap<>();
     private MultiTypeAdapter adapter;
 
     private Items items;
