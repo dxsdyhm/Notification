@@ -13,6 +13,7 @@
         android:layout_height="32dp" />
 
     <com.mvp.ui.widget.RedPointTextView
+        android:id="@+id/v_text"
         android:layout_width="100dp"
         android:layout_height="20dp" />
 
@@ -35,5 +36,20 @@
         android:layout_height="100dp">
 
     </com.mvp.ui.widget.OritaView>
+
+    <com.mvp.ui.widget.ArrowsView
+        android:id="@+id/v_arr"
+        app:layout_constraintTop_toBottomOf="@+id/v_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        android:layout_width="15dp"
+        android:layout_height="wrap_content" />
+    <com.mvp.ui.widget.CloseView
+        app:layout_constraintTop_toBottomOf="@+id/v_arr"
+        android:layout_width="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        android:layout_height="20dp" />
 
 </android.support.constraint.ConstraintLayout>

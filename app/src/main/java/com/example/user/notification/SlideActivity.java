@@ -15,9 +15,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +30,7 @@ import com.example.user.notification.entity.Ble;
 import com.example.user.notification.entity.Device;
 import com.inuker.bluetooth.library.beacon.Beacon;
 import com.mvp.ui.widget.OritaView;
-import com.sothree.slidinguppanel.SlidingUpPanelLayout;
+import com.mvp.ui.widget.library.SlidingUpPanelLayout;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -89,19 +91,21 @@ public class SlideActivity extends AppCompatActivity implements View.OnClickList
         mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
             public void onPanelSlide(View panel, float slideOffset) {
-                Log.i(TAG, "onPanelSlide, offset " + slideOffset);
                 oritaView.setShowProgress(slideOffset);
             }
 
             @Override
             public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
-                Log.i(TAG, "onPanelStateChanged " + newState);
                 if(newState==SlidingUpPanelLayout.PanelState.COLLAPSED){
                     //线性
                     rlTest.setLayoutManager(linearLayoutManager);
+                    oritaView.showOrHidenSpecialView(OritaView.STATE_HIDDEN);
                 }else if(newState==SlidingUpPanelLayout.PanelState.EXPANDED){
                     //表格
                     rlTest.setLayoutManager(gridLayoutManager);
+                    oritaView.showOrHidenSpecialView(OritaView.STATE_SHOW);
+                }else{
+                    oritaView.showOrHidenSpecialView(OritaView.STATE_HIDDEN);
                 }
             }
         });
@@ -116,7 +120,6 @@ public class SlideActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void setData(){
-        byte[] re=new byte[13];
         for(int i=0;i<10;i++){
             Device device=new Device(String.valueOf(i));
             items.add(device);
