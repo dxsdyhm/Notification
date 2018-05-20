@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.mvp.ui.activity.BleClientActivity;
 import com.mvp.ui.activity.BleListActivity;
 import com.example.user.notification.wxAboult.WxInfoActivity;
 import com.example.user.notification.wxAboult.WxLoginActivity;
@@ -91,6 +92,19 @@ public class MainActivity extends AppCompatActivity {
                 toBleServer();
             }
         });
+
+        findViewById(R.id.btn_bleclient).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toBleClient();
+            }
+        });
+    }
+
+    private void toBleClient() {
+        Intent to=new Intent();
+        to.setClass(MainActivity.this,BleClientActivity.class);
+        startActivity(to);
     }
 
     private void toWxAboult(){

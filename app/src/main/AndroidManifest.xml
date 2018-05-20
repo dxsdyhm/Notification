@@ -44,7 +44,9 @@
         <activity android:name=".wxAboult.WxLoginActivity" />
         <activity android:name=".ScollActivity" />
         <activity android:name=".SlideActivity" />
-        <activity android:name="com.mvp.ui.activity.BleServerActivity"></activity>
+        <activity android:name="com.mvp.ui.activity.BleServerActivity" />
+        <activity android:name="com.mvp.ui.activity.BleClientActivity" />
+        <activity android:name="com.mvp.ui.activity.CommActivity"></activity>
     </application>
 
 </manifest>
