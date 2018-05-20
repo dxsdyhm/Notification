@@ -15,7 +15,7 @@ import android.widget.TextView;
  */
 
 public class RedPointTextView extends View {
-    private  int currentValue=0;
+    private  String currentValue="0";
     private  boolean isRedShow=true;
     private Paint mPaintRed;
     private Paint mTextPaint;
@@ -65,6 +65,14 @@ public class RedPointTextView extends View {
                 }
             }
         }.start();
+    }
+
+    /**
+     * 声音时长
+     * @param len 时长文字（秒）
+     */
+    public void setVoiceLen(String len){
+        this.currentValue=len;
     }
 
     @Override
@@ -119,7 +127,7 @@ public class RedPointTextView extends View {
         return (int) (dipValue * scale + 0.5f);
     }
 
-    private String getFormatText(int value){
-        return ""+value+"″";
+    private String getFormatText(String value){
+        return value+"″";
     }
 }

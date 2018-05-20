@@ -16,6 +16,7 @@ public class ScollActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoll);
         group=findViewById(R.id.vg_voice);
+        group.setVoiceLen("12");
         group.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

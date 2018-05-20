@@ -43,7 +43,8 @@
             android:theme="@android:style/Theme.NoDisplay" />
         <activity android:name=".wxAboult.WxLoginActivity" />
         <activity android:name=".ScollActivity" />
-        <activity android:name=".SlideActivity"></activity>
+        <activity android:name=".SlideActivity" />
+        <activity android:name="com.mvp.ui.activity.BleServerActivity"></activity>
     </application>
 
 </manifest>

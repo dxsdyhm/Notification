@@ -18,6 +18,7 @@ import android.widget.Button;
 import com.mvp.ui.activity.BleListActivity;
 import com.example.user.notification.wxAboult.WxInfoActivity;
 import com.example.user.notification.wxAboult.WxLoginActivity;
+import com.mvp.ui.activity.BleServerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -83,6 +84,13 @@ public class MainActivity extends AppCompatActivity {
                 toSlide();
             }
         });
+
+        findViewById(R.id.btn_bleServer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toBleServer();
+            }
+        });
     }
 
     private void toWxAboult(){
@@ -141,6 +149,12 @@ public class MainActivity extends AppCompatActivity {
     private void testVoice(){
         Intent to=new Intent();
         to.setClass(MainActivity.this,ScollActivity.class);
+        startActivity(to);
+    }
+
+    private void toBleServer(){
+        Intent to=new Intent();
+        to.setClass(MainActivity.this,BleServerActivity.class);
         startActivity(to);
     }
 }

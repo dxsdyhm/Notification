@@ -75,6 +75,16 @@ public class VoiceGroup extends ViewGroup {
         }
     }
 
+    /**
+     * 设置声音时长
+     * @param len 时长（秒）
+     */
+    public void setVoiceLen(String len){
+        if(redPointTextView!=null){
+            redPointTextView.setVoiceLen(len);
+        }
+    }
+
     private static int dip2px(Context context, int dipValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dipValue * scale + 0.5f);

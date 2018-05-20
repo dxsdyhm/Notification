@@ -1,41 +1,20 @@
 package com.example.user.notification;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.user.notification.adapter.BlebindView;
 import com.example.user.notification.adapter.DeviceBindView;
-import com.example.user.notification.entity.Ble;
 import com.example.user.notification.entity.Device;
-import com.inuker.bluetooth.library.beacon.Beacon;
-import com.mvp.ui.widget.OritaView;
+import com.mvp.ui.widget.IndicatorsViewGroup;
 import com.mvp.ui.widget.library.SlidingUpPanelLayout;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import me.drakeet.multitype.Items;
 import me.drakeet.multitype.MultiTypeAdapter;
@@ -55,7 +34,7 @@ public class SlideActivity extends AppCompatActivity implements View.OnClickList
     private GridLayoutManager gridLayoutManager;
 
     private Button btnAdd,btnDelete;
-    private OritaView oritaView;
+    private IndicatorsViewGroup oritaView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,13 +78,13 @@ public class SlideActivity extends AppCompatActivity implements View.OnClickList
                 if(newState==SlidingUpPanelLayout.PanelState.COLLAPSED){
                     //线性
                     rlTest.setLayoutManager(linearLayoutManager);
-                    oritaView.showOrHidenSpecialView(OritaView.STATE_HIDDEN);
+                    oritaView.showOrHidenSpecialView(IndicatorsViewGroup.STATE_HIDDEN);
                 }else if(newState==SlidingUpPanelLayout.PanelState.EXPANDED){
                     //表格
                     rlTest.setLayoutManager(gridLayoutManager);
-                    oritaView.showOrHidenSpecialView(OritaView.STATE_SHOW);
+                    oritaView.showOrHidenSpecialView(IndicatorsViewGroup.STATE_SHOW);
                 }else{
-                    oritaView.showOrHidenSpecialView(OritaView.STATE_HIDDEN);
+                    oritaView.showOrHidenSpecialView(IndicatorsViewGroup.STATE_HIDDEN);
                 }
             }
         });

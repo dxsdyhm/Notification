@@ -43,12 +43,12 @@
         android:focusable="false"
         android:orientation="vertical">
 
-        <com.mvp.ui.widget.OritaView
+        <com.mvp.ui.widget.IndicatorsViewGroup
             android:id="@+id/vg_oritation"
             android:layout_width="match_parent"
             android:layout_height="48dp">
 
-        </com.mvp.ui.widget.OritaView>
+        </com.mvp.ui.widget.IndicatorsViewGroup>
 
         <RelativeLayout
             android:layout_width="match_parent"

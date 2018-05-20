@@ -1,25 +1,21 @@
 package com.mvp.ui.widget;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 
 /**
  * Created by dxs on 2018/5/16.
  */
 
-public class OritaView extends ViewGroup {
+public class IndicatorsViewGroup extends ViewGroup {
     public final static int STATE_HIDDEN=0;
     public final static int STATE_SHOW=1;
     private Path mPath;
@@ -41,15 +37,15 @@ public class OritaView extends ViewGroup {
     //如果要扩大点击区域，则可将此参数放入视图内部，这里点击区域是整个控件，暂时不需要移动
     private int closePadding = 20;
 
-    public OritaView(Context context) {
+    public IndicatorsViewGroup(Context context) {
         this(context, null);
     }
 
-    public OritaView(Context context, AttributeSet attrs) {
+    public IndicatorsViewGroup(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public OritaView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public IndicatorsViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initData(context);
     }
